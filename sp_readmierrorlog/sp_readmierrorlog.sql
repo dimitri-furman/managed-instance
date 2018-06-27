@@ -90,6 +90,7 @@ VALUES
 ('`] log capture becomes idle',2),
 ('A connection for availability group',1),
 ('accepting vlf header',1),
+('BACKUP DATABASE WITH DIFFERENTIAL successfully processed',1),
 ('Backup(',3),
 ('Backup(managed_model):',1),
 ('Backup(msdb):',1),
@@ -100,6 +101,7 @@ VALUES
 ('cloud Partition',1),
 ('CloudTelemetryBase',1),
 ('Copying dbt_inactiveDurationMin',1),
+('Database differential changes were backed up.',1),
 ('DbMgrPartnerCommitPolicy',1),
 ('DBR Subscriber',1),
 ('Deflation Settings',2),
@@ -189,4 +191,3 @@ WHERE NOT EXISTS (
 ORDER BY el.LogDate,
          el.LogID
 OPTION (RECOMPILE);
-
