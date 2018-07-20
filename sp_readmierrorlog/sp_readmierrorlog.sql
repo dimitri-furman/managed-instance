@@ -150,6 +150,7 @@ VALUES
 ('snapshot isolation setting ON for logical master.',2),
 ('State information for database ''',1),
 ('The recovery LSN (',1),
+('UpdateHadronTruncationLsn(',1),
 ('XactRM::PrepareLocalXact',2),
 ('Zeroing ',1)
 ;
@@ -196,4 +197,4 @@ WHERE NOT EXISTS (
                  )
 ORDER BY el.LogDate,
          el.LogID
-OPTION (RECOMPILE);
+OPTION (RECOMPILE, MAXDOP 1);
