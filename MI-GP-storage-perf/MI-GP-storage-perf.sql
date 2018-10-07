@@ -5,6 +5,13 @@ execution are near Azure Premium Storage limits for the blob corresponding to th
 
 The script helps in determining if using larger files/blobs with higher limits
 would be beneficial for improving workload performance.
+
+NOTE: This script reports IOPS as they are measured by SQL Server. Azure Premium Storage measures 
+them differently. For IOs up to 256 KB, both measurements match. For larger IOs, Azure Premium Storage 
+breaks each IO into 256 KB chunks, and counts each chunk as an IO. Therefore, if SQL Server issues 
+IOs larger than 256 KB, e.g. during backup/restore, then IOPS reported by this script will be lower 
+than the IOPS measured by Azure Premium Storage. In this case, IOPS-based throttling could be 
+occurring even if not reported in the script output.
 */
 
 SET NOCOUNT ON;
