@@ -59,6 +59,7 @@ FilterText,
 FilterType
 )
 VALUES
+('`[AzureKeyVaultClientHelper::CheckDbAkvWrapUnwrap`]: Skipped',1),
 (' `[RotateDatabaseKeys`]',1),
 (' PVS',2),
 ('`[ERROR`] Log file %.xel cannot be deleted. Last error code from CreateFile is 32',2),
