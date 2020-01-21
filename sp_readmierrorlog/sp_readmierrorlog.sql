@@ -171,6 +171,7 @@ VALUES
 ('State information for database ''',1),
 ('The recovery LSN (',1),
 ('UpdateHadronTruncationLsn(',1),
+('Volume file entity not null',1),
 ('Warning: The join order has been enforced because a local join hint is used.',1),
 ('XactRM::PrepareLocalXact',2),
 ('Zeroing ',1)
