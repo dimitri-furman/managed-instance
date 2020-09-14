@@ -79,6 +79,10 @@ UNION
 SELECT 1024, 5000, 200
 UNION
 SELECT 2048, 7500, 250
+UNION
+SELECT 4096, 7500, 250
+UNION
+SELECT 8192, 12500, 480
 ),
 -- Calculate IOPS/throughput per file for each sampling interval,
 -- by subtracting the cumulative stats of the previous sample 
