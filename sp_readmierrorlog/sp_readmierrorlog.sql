@@ -174,7 +174,20 @@ VALUES
 ('Volume file entity not null',1),
 ('Warning: The join order has been enforced because a local join hint is used.',1),
 ('XactRM::PrepareLocalXact',2),
-('Zeroing ',1)
+('Zeroing ',1),
+('`[SloManager::AdjustCpuSettingForResourceGroup`] :',1),
+('`[SloManager::AdjustCpuSettingForResourcePool`] :',1),
+('`[GetInstanceRgSize`]',1),
+('`[GetFabricPropertyAADTenantId`]',1),
+('`[SloManager::GetFabricPropertyAADServerAdminSid`]',1),
+('`[SloParams::ParseSloParams`] :',1),
+('`[DISK_SPACE_TO_RESERVE_PROPERTY`]',1),
+('`[GetInterfaceEndpointsConfigurationInternal`]',1),
+('`[SetupInterfaceEndpointsConfiguration`]',1),
+('`[VersionCleaner`]',1),
+('ConfigureRgInstance - RgInstanceSetting',1),
+('** FabricStatefulServiceFactory::Startup **',1),
+('Started XE session',1)
 ;
 
 -- Get unfiltered log
