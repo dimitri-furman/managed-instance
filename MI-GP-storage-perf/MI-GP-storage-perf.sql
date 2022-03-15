@@ -65,6 +65,23 @@ BEGIN
     WAITFOR DELAY @DelayInterval;
 END;
 
+--Save the results in a dummy table
+
+IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = N'_perf_MI_MS_GUI_215854_ASTX') 
+  CREATE TABLE [_perf_MI_MS_GUI_215854_ASTX](
+      [MeasureDate] DATETIME NULL, 
+         [DatabaseName] [nvarchar](128) NULL,
+         [FileLogicalName] [nvarchar](128) NULL,
+         [FilePhysicalName] [nvarchar](260) NOT NULL,
+         [FileSizeGB] [decimal](12, 4) NULL,
+         [BlobSizeGB] [int] NOT NULL,
+         [IOPSLimit] [int] NOT NULL,
+         [MaxIOPS] [decimal](12, 2) NULL,
+         [IOPSNearLimitCount] [int] NULL,
+         [ThroughputLimitMBPS] [int] NOT NULL,
+         [MaxThroughputMBPS] [decimal](12, 2) NULL,
+         [ThroughputNearLimitCount] [int] NULL);
+
 -- Return result set. 
 -- Each row represents a database file, and includes max IOPS/throughput seen against the file, 
 -- as well as counters showing how many times file IOPS/throughput were near Premium Storage limits during sampling loop execution.
@@ -125,7 +142,18 @@ WHERE -- Remove rows without corresponding next sample
       AND
       ipm.IntervalThroughput IS NOT NULL
 )
-SELECT fpm.DatabaseName,
+INSERT INTO _perf_MI_MS_GUI_215854_ASTX ([MeasureDate], [DatabaseName],
+                                            [FileLogicalName],
+                                            [FilePhysicalName],
+                                            [FileSizeGB],
+                                            [BlobSizeGB],
+                                            [IOPSLimit],
+                                            [MaxIOPS],
+                                            [IOPSNearLimitCount],
+                                            [ThroughputLimitMBPS],
+                                            [MaxThroughputMBPS],
+                                            [ThroughputNearLimitCount] ) 
+SELECT getdate(), fpm.DatabaseName,
        fpm.FileLogicalName,
        fpm.FilePhysicalName,
        fpm.FileSizeGB,
