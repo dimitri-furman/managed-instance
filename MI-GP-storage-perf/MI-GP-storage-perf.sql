@@ -72,15 +72,15 @@ WITH
 -- Define Azure Premium Storage limits (https://docs.microsoft.com/en-us/azure/virtual-machines/windows/premium-storage#premium-storage-disk-limits)
 BlobLimit AS
 (
-SELECT 128 AS BlobSizeGB, 500 AS IOPSLimit, 100 AS ThroughputLimit
+SELECT 129 AS BlobSizeGB, 500 AS IOPSLimit, 100 AS ThroughputLimit
 UNION
-SELECT 512, 2300, 150
+SELECT 513, 2300, 150
 UNION
-SELECT 1024, 5000, 200
+SELECT 1025, 5000, 200
 UNION
-SELECT 2048, 7500, 250
+SELECT 2049, 7500, 250
 UNION
-SELECT 4096, 7500, 250
+SELECT 4097, 7500, 250
 UNION
 SELECT 8192, 12500, 480
 ),
