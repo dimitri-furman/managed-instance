@@ -132,6 +132,7 @@ VALUES
 ('Cannot open database ''model_msdb'' version',1),
 ('CFabricReplicaController',2),
 ('CHadrSession',1),
+('CImageHelper::Init () Version-specific dbghelp.dll is not used',1),
 ('Cleaning up conversations for `[',1),
 ('cloud Partition',1),
 ('CloudTelemetryBase',1),
